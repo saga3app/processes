@@ -1,0 +1,111 @@
+{
+  "name" : "third",
+  "label" : "Treti krasny process s comboboxy a idetitou",
+  "revision" : 1,
+  "edges" : [ {
+    "name" : "e1",
+    "condition" : "true",
+    "from" : {
+      "type" : "START"
+    },
+    "to" : {
+      "name" : "task1",
+      "type" : "TASK"
+    }
+  }, {
+    "name" : "e2",
+    "condition" : "true",
+    "from" : {
+      "name" : "task1",
+      "type" : "TASK"
+    },
+    "to" : {
+      "type" : "END"
+    }
+  } ],
+  "tasks" : [ {
+    "name" : "task1",
+    "label" : "Definition",
+    "sections" : [ {
+      "name" : "Section 1",
+      "label" : "Hrani s comboboxy",
+      "widgets" : [ {
+        "name" : "w1",
+        "label" : "Boxik1",
+        "ui" : "select-widget",
+		"required": "false",
+		"properties" : {
+			"enumeration": "PartyType",
+			"keyExpression": "item.name",
+			"labelExpression": "item.label" 
+		},
+        "binding" : {
+          "selected" : "selectedValue"
+        }
+      }, {
+        "name" : "w2",
+        "label" : "ShowHtml",
+        "ui" : "showhtml-widget",
+		"properties" : {
+			"template": "<b>${enumLabel(\"PartyType\", selectedValue)}</b>  <i>${_user.displayName}</i>",
+			"watching": ["selectedValue"]
+		},
+        "binding" : {
+        }
+      } , {
+        "name" : "w3",
+        "label" : "Uzivak",
+        "ui" : "identity-widget",
+		"properties" : {
+		},
+        "binding" : {
+        	"identity": "uzivak"
+        }
+      }
+      ]
+    } ],
+    "commands" : [ {
+      "name" : "Complete",
+      "label" : "Complete",
+      "type" : "COMPLETE",
+      "primary" : true
+    }, {
+      "name" : "Save",
+      "label" : "Save",
+      "type" : "SAVE",
+      "primary" : false
+    } ],
+    "configurations" : [ {
+      "condition" : "true",
+      "potentialOwner" : {
+        "name" : "role1"
+      },
+      "businessAdministrator" : {
+        "name" : "role1Admin"
+      }
+    } ],
+    "notifications": [{
+    	"type": "ADD_TASK",
+  		"condition": "true",
+  		"role": { "name": "notifRole" }
+    }, {
+		"type": "TAKE_TASK",
+		"condition": "true",
+		"user": {
+			"expression": "_instance.createdBy"
+		}
+	}]
+  } ],
+  "descriptionExpression" : "\"Treti process s comboboxy a idetitou \" + _instance.instanceId",
+  "obsolete" : false,
+  "defaultAttributes" : { },
+  "notifications": [
+  		{
+  			"type": "TERMINATE_INSTANCE",
+  			"condition": "true",
+  			"user": {
+				"expression": "_instance.createdBy"
+			}
+  		}
+  ]
+}

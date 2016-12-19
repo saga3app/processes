@@ -1,0 +1,105 @@
+{
+  "name" : "universal",
+  "label" : "Universalni process",
+  "revision" : 1,
+  "edges" : [ {
+    "name" : "e1",
+    "condition" : "true",
+    "from" : {
+      "type" : "START"
+    },
+    "to" : {
+      "name" : "task1",
+      "type" : "TASK"
+    }
+  }, {
+    "name" : "e2",
+    "condition" : "true",
+    "from" : {
+      "name" : "task1",
+      "type" : "TASK"
+    },
+    "to" : {
+      "type" : "END"
+    }
+  } ],
+  "tasks" : [ {
+    "name" : "task1",
+    "label" : "Definition",
+    "header": {
+    	"template": "<h2>${client.firstName} ${client.surname}<h2><h2>${account.prefix}-${account.number}/${account.bankCode}",
+    	"watching": ["client.firstName", "client.surname", "account.prefix", "account.number", "account.bankCode"]
+    },
+    "sections" : [ {
+      "name" : "zaklad",
+      "label" : "Zaklad",
+      "widgets" : [ {
+        "name" : "w1",
+        "label" : "Client",
+        "ui" : "person-widget",
+		"required": "false",
+		"properties" : {
+		},
+        "binding" : {
+          "client" : "client"
+        }
+      }, {
+        "name" : "w2",
+        "label" : "Product",
+        "ui" : "product-widget",
+		"required": "false",
+		"properties" : {
+		},
+        "binding" : {
+          "client" : "client",
+          "product" : "product"
+        }
+      }, {
+        "name" : "w3",
+        "label" : "Account",
+        "ui" : "account-widget",
+		"required": "false",
+		"properties" : {
+		},
+        "binding" : {
+          "account" : "account"
+        }
+      }, {
+        "name" : "w4",
+        "label" : "Company",
+        "ui" : "company-widget",
+		"required": "false",
+		"properties" : {
+		},
+        "binding" : {
+          "client" : "company"
+        }
+      } ]
+    } ],
+    "commands" : [ {
+      "name" : "Complete",
+      "label" : "Complete",
+      "type" : "COMPLETE",
+      "primary" : true
+    }, {
+      "name" : "Save",
+      "label" : "Save",
+      "type" : "SAVE",
+      "primary" : false
+    } ],
+    "configurations" : [ {
+      "condition" : "true",
+      "potentialOwner" : {
+        "name" : "role1"
+      },
+      "businessAdministrator" : {
+        "name" : "role1Admin"
+      }
+    } ]
+  } ],
+  "descriptionExpression" : "\"Universal process s klientem \" + _instance.instanceId",
+  "obsolete" : false,
+  "defaultAttributes" : { },
+  "notifications": [
+  ]
+}
