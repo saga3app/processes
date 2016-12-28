@@ -4,7 +4,7 @@
   "revision" : 1,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -33,7 +33,7 @@
         "name" : "from",
         "label" : "From",
         "ui" : "select-widget",
-		"required": "true",
+		"required": { "expression": "true" },
 		"properties" : {
 			"enumeration": "Currency",
 			"keyExpression": "item.name",
@@ -46,7 +46,7 @@
         "name" : "amount",
         "label" : "Amount",
         "ui" : "text-widget",
-		"required": "true",
+		"required": { "expression": "true" },
 		"properties" : {
 		},
         "binding" : {
@@ -56,7 +56,7 @@
         "name" : "to",
         "label" : "To",
         "ui" : "select-widget",
-		"required": "true",
+		"required": { "expression": "true" },
 		"properties" : {
 			"enumeration": "Currency",
 			"keyExpression": "item.name",
@@ -69,7 +69,6 @@
         "name" : "exchange",
         "label" : "Spocitat",
         "ui" : "rest-widget",
-		"required": "false",
 		"properties" : {
 			"urlTemplate": "https://currencyconverter.p.mashape.com/?from=${from}&from_amount=${amount}&to=${to}",
 			"headers": {"X-Mashape-Key": "5DIsdaPhgBmshYd7lBZJi9LtqJcOp1mZorWjsnLqxoXDq7RXUm"}
@@ -82,7 +81,7 @@
         "name" : "result",
         "label" : "Vysledek",
         "ui" : "text-widget",
-		"editable": "false",
+		"editable": { "expression": "false" },
 		"properties" : {
 		},
         "binding" : {
@@ -103,7 +102,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true" },
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -112,7 +111,7 @@
       }
     } ]
   } ],
-  "descriptionExpression" : "\"Exchange kalkulacka \" + _instance.instanceId",
+  "description" : {"expression" : "\"Exchange kalkulacka \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { },
   "notifications": [

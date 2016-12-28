@@ -4,7 +4,7 @@
   "revision" : 23,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -25,7 +25,7 @@
     }
   }, {
     "name" : "e3",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task2",
       "type" : "TASK"
@@ -48,7 +48,7 @@
         "name" : "w1",
         "label" : "Texticek",
         "ui" : "text-widget",
-		"required": "true",
+		"required": { "expression": "true" },
 		"properties" : { 
 			"length": 20
 		},
@@ -69,7 +69,7 @@
       }, {
         "name" : "w2",
         "label" : "Birth Date",
-        "visible" : "firstValue!='XXX'",
+        "visible" : { "expression": "firstValue!='XXX'"},
         "ui" : "date-widget",
         "binding" : {
           "value" : "person.birthDate"
@@ -109,7 +109,7 @@
       }, {
         "name" : "w5",
         "label" : "Cudlik",
-        "editable" : "person.somelist.indexOf('yes')>=0",
+        "editable" : { "expression": "person.somelist.indexOf('yes')>=0"},
         "ui" : "button-widget",
         "binding" : {
           "value" : "cudlik2"
@@ -138,7 +138,7 @@
     }, {
       "name" : "Suspend",
       "label" : "Suspend",
-      "editable": "cudlik2",
+      "editable": {"expression" :"cudlik2"},
       "type" : "SUSPEND",
       "primary" : false
     }, {
@@ -148,7 +148,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true" },
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -177,13 +177,13 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true" },
       "potentialOwner" : {
         "name" : "role2"
       }
     } ]
   } ],
-  "descriptionExpression" : "\"Prvni krasny process s formem \" + _instance.instanceId",
+  "description" : { "expression": "\"Prvni krasny process s formem \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { }
 }

@@ -4,7 +4,7 @@
   "revision" : 1,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -33,7 +33,7 @@
         "name" : "w1",
         "label" : "Dokumenty",
         "ui" : "documentlist-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : { 
 		},
         "binding" : {
@@ -43,7 +43,7 @@
         "name" : "w2",
         "label" : "Dokumenty Jinak",
         "ui" : "select-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : { 
           "keyExpression": "item.id",
           "labelExpression": "item.name + ' ' + item.type.name"
@@ -56,7 +56,7 @@
         "name" : "w3",
         "label" : "Radios",
         "ui" : "radio-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 			"items" : {
             "no" : "Ne",
@@ -82,7 +82,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -110,8 +110,8 @@
         "name" : "w1",
         "label" : "Dokumenty",
         "ui" : "documentlist-widget",
-		"required": "false",
-		"editable": "false",
+		"required": { "expression": "false"},
+		"editable": { "expression": "false"},
 		"properties" : { 
 		},
         "binding" : {
@@ -121,7 +121,7 @@
     ]
   }]
   },
-  "descriptionExpression" : "\"Druhy krasny process s dokumenty \" + _instance.instanceId",
+  "description" : { "expression": "\"Druhy krasny process s dokumenty \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { }
 }

@@ -4,7 +4,7 @@
   "revision" : 1,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "next=='task2'",
+    "condition" : { "expression": "next=='task2'"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -24,8 +24,8 @@
       "type" : "TASK"
     }
   }, {
-    "name" : "e2",
-    "condition" : "next=='task3'",
+    "name" : "e3",
+    "condition" : { "expression": "next=='task3'"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -35,8 +35,8 @@
       "type" : "TASK"
     }
   }, {
-    "name" : "e2",
-    "condition" : "next=='task4'",
+    "name" : "e4",
+    "condition" : { "expression": "next=='task4'"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -46,8 +46,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task1'",
+    "name" : "e5",
+    "condition" : { "expression": "next=='task1'"},
     "from" : {
       "name" : "task2",
       "type" : "TASK"
@@ -57,8 +57,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task3'",
+    "name" : "e6",
+    "condition" : { "expression": "next=='task3'"},
     "from" : {
       "name" : "task2",
       "type" : "TASK"
@@ -68,8 +68,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task4'",
+    "name" : "e7",
+    "condition" : { "expression": "next=='task4'"},
     "from" : {
       "name" : "task2",
       "type" : "TASK"
@@ -79,8 +79,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task1'",
+    "name" : "e8",
+    "condition" : { "expression": "next=='task1'"},
     "from" : {
       "name" : "task3",
       "type" : "TASK"
@@ -90,8 +90,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task2'",
+    "name" : "e9",
+    "condition" : { "expression": "next=='task2'"},
     "from" : {
       "name" : "task3",
       "type" : "TASK"
@@ -101,8 +101,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task4'",
+    "name" : "e10",
+    "condition" : { "expression": "next=='task4'"},
     "from" : {
       "name" : "task3",
       "type" : "TASK"
@@ -112,8 +112,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task1'",
+    "name" : "e11",
+    "condition" : { "expression": "next=='task1'"},
     "from" : {
       "name" : "task4",
       "type" : "TASK"
@@ -123,8 +123,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task2'",
+    "name" : "e12",
+    "condition" : { "expression": "next=='task2'"},
     "from" : {
       "name" : "task4",
       "type" : "TASK"
@@ -134,8 +134,8 @@
       "type" : "TASK"
     }
   },{
-    "name" : "e2",
-    "condition" : "next=='task3'",
+    "name" : "e13",
+    "condition" :{ "expression":  "next=='task3'"},
     "from" : {
       "name" : "task4",
       "type" : "TASK"
@@ -156,7 +156,7 @@
         "name" : "w3",
         "label" : "Radios",
         "ui" : "radio-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 			"items" : {
 	            "task1" : "Task1",
@@ -195,7 +195,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -214,7 +214,7 @@
         "name" : "w3",
         "label" : "Radios",
         "ui" : "radio-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 			"items" : {
             "task1" : "Task1",
@@ -253,7 +253,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -272,7 +272,7 @@
         "name" : "w3",
         "label" : "Radios",
         "ui" : "radio-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 			"items" : {
             "task1" : "Task1",
@@ -310,7 +310,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -329,7 +329,7 @@
         "name" : "w3",
         "label" : "Radios",
         "ui" : "radio-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 			"items" : {
             "task1" : "Task1",
@@ -367,7 +367,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -376,7 +376,7 @@
       }
     } ]
   } ],
-  "descriptionExpression" : "\"History of instance \" + _instance.instanceId",
+  "description" : { "expression": "\"History of instance \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { },
   "notifications": [

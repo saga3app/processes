@@ -4,7 +4,7 @@
   "revision" : 1,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -33,7 +33,7 @@
         "name" : "w1",
         "label" : "Boxik1",
         "ui" : "select-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 			"enumeration": "PartyType",
 			"keyExpression": "item.name",
@@ -76,7 +76,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -86,25 +86,25 @@
     } ],
     "notifications": [{
     	"type": "ADD_TASK",
-  		"condition": "true",
+  		"condition": { "expression": "true"},
   		"role": { "name": "notifRole" }
     }, {
 		"type": "TAKE_TASK",
-		"condition": "true",
+		"condition": { "expression": "true"},
 		"user": {
-			"expression": "_instance.createdBy"
+			"expression": { "expression": "_instance.createdBy"}
 		}
 	}]
   } ],
-  "descriptionExpression" : "\"Treti process s comboboxy a idetitou \" + _instance.instanceId",
+  "description" : { "expression": "\"Treti process s comboboxy a idetitou \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { },
   "notifications": [
   		{
   			"type": "TERMINATE_INSTANCE",
-  			"condition": "true",
+  			"condition": { "expression": "true"},
   			"user": {
-				"expression": "_instance.createdBy"
+				"expression": { "expression": "_instance.createdBy"}
 			}
   		}
   ]

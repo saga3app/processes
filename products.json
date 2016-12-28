@@ -4,7 +4,7 @@
   "revision" : 1,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -37,7 +37,7 @@
         "name" : "w1",
         "label" : "Client",
         "ui" : "person-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 		},
         "binding" : {
@@ -47,7 +47,7 @@
         "name" : "w2",
         "label" : "Product",
         "ui" : "productlist-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 		},
         "binding" : {
@@ -69,7 +69,7 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression": "true"},
       "potentialOwner" : {
         "name" : "role1"
       },
@@ -78,7 +78,7 @@
       }
     } ]
   } ],
-  "descriptionExpression" : "\"Produkty klienta \" + _instance.instanceId",
+  "description" : { "expression": "\"Produkty klienta \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { },
   "notifications": [

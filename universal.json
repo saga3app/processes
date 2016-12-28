@@ -4,7 +4,7 @@
   "revision" : 1,
   "edges" : [ {
     "name" : "e1",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "type" : "START"
     },
@@ -14,7 +14,7 @@
     }
   }, {
     "name" : "e2",
-    "condition" : "true",
+    "condition" : { "expression": "true"},
     "from" : {
       "name" : "task1",
       "type" : "TASK"
@@ -37,7 +37,7 @@
         "name" : "w1",
         "label" : "Client",
         "ui" : "person-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 		},
         "binding" : {
@@ -47,7 +47,7 @@
         "name" : "w2",
         "label" : "Product",
         "ui" : "product-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 		},
         "binding" : {
@@ -58,7 +58,7 @@
         "name" : "w3",
         "label" : "Account",
         "ui" : "account-widget",
-		"required": "false",
+		"required": { "expression": "false"},
 		"properties" : {
 		},
         "binding" : {
@@ -68,19 +68,39 @@
         "name" : "w4",
         "label" : "Company",
         "ui" : "company-widget",
-		"required": "false",
+		"required": { "expression":"false"},
 		"properties" : {
 		},
         "binding" : {
           "client" : "company"
         }
-      } ]
+      }, {
+        "name" : "w5",
+        "label" : "Suspended Until",
+        "ui" : "date-widget",
+		"properties" : {
+		},
+        "binding" : {
+          "value" : "suspendedUntil"
+        }
+      }  ]
     } ],
     "commands" : [ {
-      "name" : "Complete",
-      "label" : "Complete",
-      "type" : "COMPLETE",
-      "primary" : true
+      "name" : "Done",
+      "label" : "Done",
+      "type" : "DONE",
+      "primary" : true,
+      "data": {
+      	"suspendedUntil": { "expression": "suspendedUntil" }
+      }
+    }, {
+      "name" : "Suspend",
+      "label" : "Suspend",
+      "type" : "SUSPEND",
+      "primary" : true,
+      "editable": {
+      	"expression": "client==null"
+      }
     }, {
       "name" : "Save",
       "label" : "Save",
@@ -88,16 +108,16 @@
       "primary" : false
     } ],
     "configurations" : [ {
-      "condition" : "true",
+      "condition" : { "expression":"true"},
       "potentialOwner" : {
         "name" : "role1"
       },
       "businessAdministrator" : {
         "name" : "role1Admin"
       }
-    } ]
+    }]
   } ],
-  "descriptionExpression" : "\"Universal process s klientem \" + _instance.instanceId",
+  "description" : { "expression": "\"Universal process s klientem \" + _instance.instanceId"},
   "obsolete" : false,
   "defaultAttributes" : { },
   "notifications": [
