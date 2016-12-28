@@ -52,7 +52,8 @@
 		},
         "binding" : {
           "client" : "client",
-          "product" : "product"
+          "product" : "product",
+          "account" : "account"
         }
       }, {
         "name" : "w3",
@@ -79,6 +80,8 @@
         "label" : "Suspended Until",
         "ui" : "date-widget",
 		"properties" : {
+			"mode": "date-time",
+			"format": "YYYY-MM-DDTHH:mm:ssZ"
 		},
         "binding" : {
           "value" : "suspendedUntil"
@@ -92,14 +95,6 @@
       "primary" : true,
       "data": {
       	"suspendedUntil": { "expression": "suspendedUntil" }
-      }
-    }, {
-      "name" : "Suspend",
-      "label" : "Suspend",
-      "type" : "SUSPEND",
-      "primary" : true,
-      "editable": {
-      	"expression": "client==null"
       }
     }, {
       "name" : "Save",
