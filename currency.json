@@ -26,6 +26,16 @@
   "tasks" : [ {
     "name" : "task1",
     "label" : "Definition",
+    "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "vypocet",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections" : [ {
       "name" : "vypocet",
       "label" : "Vypocet",

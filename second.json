@@ -26,8 +26,39 @@
   "tasks" : [ {
     "name" : "task1",
     "label" : "Definition",
+    "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "section1",
+	      "type" : "SECTION"
+	    }
+    }, {
+    	"from" : {
+	      "type" : "SECTION",
+	      "name": "section1"
+	    },
+    	"condition" : { "expression": "radio=='yes'"},
+    	"to" : {
+	      "name" : "section2",
+	      "type" : "SECTION"
+	    }
+    }, {
+    	"from" : {
+	      "type" : "SECTION",
+	      "name": "section2"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "section3",
+	      "type" : "SECTION"
+	    }
+    }
+    ],
     "sections" : [ {
-      "name" : "Section 1",
+      "name" : "section1",
       "label" : "Seznam dokumentu",
       "widgets" : [ {
         "name" : "w1",
@@ -67,9 +98,56 @@
         "binding" : {
           "selected": "radio"
         }
+      }, {
+        "name" : "w4",
+        "label" : "Section Done",
+        "ui" : "button-widget",
+        "binding" : {
+          "value": "section1Done"
+        },
+        "properties": {
+        	"closeSection": true
+        }
       }
       ]
-    } ],
+    }, {
+    	"name": "section2",
+    	"label": "Podminena sekce 1",
+    	"widgets" : [
+	    	{
+	        "name" : "w4",
+	        "label" : "Text2",
+	        "ui" : "text-widget",
+	        "binding": {
+	          "value": "text2"
+	        }
+	      }, {
+	      	"name" : "w6",
+	        "label" : "Text2",
+	        "ui" : "button-widget",
+	        "binding": {
+	          "value": "section2Done"
+	        },
+	        "properties": {
+	        	"closeSection": true
+	        }
+	      }
+    	]
+    }, {
+    	"name": "section3",
+    	"label": "Podminena sekce 2",
+    	"widgets" : [
+    	{
+        "name" : "w5",
+        "label" : "Text3",
+        "ui" : "text-widget",
+        "binding": {
+          "value": "text2"
+        }
+      }
+    	]
+    }
+     ],
     "commands" : [ {
       "name" : "Complete",
       "label" : "Complete",
@@ -103,8 +181,18 @@
       "type": "CLOSE",
       "primary" : true
     }],
+    "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "section1",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections": [ {
-      "name" : "Section 1",
+      "name" : "section1",
       "label" : "Seznam dokumentu",
       "widgets" : [ {
         "name" : "w1",

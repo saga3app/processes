@@ -26,6 +26,16 @@
   "tasks" : [ {
     "name" : "task1",
     "label" : "Zadost",
+     "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "zaklad",
+	      "type" : "SECTION"
+	    }
+    }],
     "header": {
     	"template": "<h2>${client.firstName} ${client.surname}<h2>",
     	"watching": ["client.firstName", "client.surname"]

@@ -26,8 +26,18 @@
   "tasks" : [ {
     "name" : "task1",
     "label" : "Definition",
+     "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "section1",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections" : [ {
-      "name" : "Section 1",
+      "name" : "section1",
       "label" : "Hrani s comboboxy",
       "widgets" : [ {
         "name" : "w1",

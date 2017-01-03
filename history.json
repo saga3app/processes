@@ -148,6 +148,16 @@
   "tasks" : [ {
     "name" : "task1",
     "label" : "Zadost",
+    "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "zaklad",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections" : [ {
       "name" : "zaklad",
       "label" : "Zaklad",
@@ -206,6 +216,16 @@
   }, {
     "name" : "task2",
     "label" : "Zpracovani",
+     "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "zaklad",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections" : [ {
       "name" : "zaklad",
       "label" : "Zaklad",
@@ -264,6 +284,16 @@
   }, {
     "name" : "task3",
     "label" : "Kontrola",
+     "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "zaklad",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections" : [ {
       "name" : "zaklad",
       "label" : "Zaklad",
@@ -321,6 +351,16 @@
   }, {
     "name" : "task4",
     "label" : "Kontaktovani klienta",
+     "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "zaklad",
+	      "type" : "SECTION"
+	    }
+    }],
     "sections" : [ {
       "name" : "zaklad",
       "label" : "Zaklad",

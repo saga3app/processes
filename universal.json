@@ -26,6 +26,16 @@
   "tasks" : [ {
     "name" : "task1",
     "label" : "Definition",
+    "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "zaklad",
+	      "type" : "SECTION"
+	    }
+    }],
     "header": {
     	"template": "<h2>${client.firstName} ${client.surname}<h2><h2>${account.prefix}-${account.number}/${account.bankCode}",
     	"watching": ["client.firstName", "client.surname", "account.prefix", "account.number", "account.bankCode"]
@@ -67,7 +77,6 @@
         }
       }, {
         "name" : "w4",
-        "label" : "Company",
         "ui" : "company-widget",
 		"required": { "expression":"false"},
 		"properties" : {
