@@ -118,6 +118,7 @@
       "widgets" : [ {
         "name" : "w4",
         "label" : "Cudlik s Url",
+        "width": "33",
         "ui" : "button-widget",
         "binding" : {
           "value" : "cudlik"
@@ -128,10 +129,20 @@
       }, {
         "name" : "w5",
         "label" : "Cudlik",
+        "width": "33",
         "editable" : { "expression": "person.somelist.indexOf('yes')>=0"},
         "ui" : "button-widget",
         "binding" : {
           "value" : "cudlik2"
+        },
+        "properties" : { }
+      }, {
+        "name" : "w7",
+        "label" : "Nic nedelajici cudlik",
+        "width": "33",
+        "ui" : "button-widget",
+        "binding" : {
+          "value" : "cudlik3"
         },
         "properties" : { }
       }, {

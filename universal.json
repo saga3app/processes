@@ -46,6 +46,7 @@
       "widgets" : [ {
         "name" : "w1",
         "label" : "Client",
+        "width": "50",
         "ui" : "person-widget",
 		"required": { "expression": "false"},
 		"properties" : {
@@ -56,6 +57,7 @@
       }, {
         "name" : "w2",
         "label" : "Product",
+        "width": "50",
         "ui" : "product-widget",
 		"required": { "expression": "false"},
 		"properties" : {
