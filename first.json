@@ -129,7 +129,7 @@
       }, {
         "name" : "w5",
         "label" : "Cudlik",
-        "width": "33",
+        "width": "initial",
         "editable" : { "expression": "person.somelist.indexOf('yes')>=0"},
         "ui" : "button-widget",
         "binding" : {
@@ -139,7 +139,7 @@
       }, {
         "name" : "w7",
         "label" : "Nic nedelajici cudlik",
-        "width": "33",
+        "width": "0",
         "ui" : "button-widget",
         "binding" : {
           "value" : "cudlik3"
