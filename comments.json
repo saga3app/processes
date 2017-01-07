@@ -1,0 +1,79 @@
+{
+  "name" : "comments",
+  "label" : "Comments example",
+  "revision" : 1,
+  "edges" : [ {
+    "name" : "e1",
+    "condition" : { "expression": "true"},
+    "from" : {
+      "type" : "START"
+    },
+    "to" : {
+      "name" : "task1",
+      "type" : "TASK"
+    }
+  }, {
+    "name" : "e2",
+    "condition" : { "expression": "true"},
+    "from" : {
+      "name" : "task1",
+      "type" : "TASK"
+    },
+    "to" : {
+      "type" : "END"
+    }
+  } ],
+  "tasks" : [ {
+    "name" : "task1",
+    "label" : "Definition",
+    "edges": [{
+    	"from" : {
+	      "type" : "START"
+	    },
+    	"condition" : { "expression": "true"},
+    	"to" : {
+	      "name" : "komentare",
+	      "type" : "SECTION"
+	    }
+    }],
+    "sections" : [ {
+      "name" : "komentare",
+      "label" : "Komentare",
+      "widgets" : [ {
+        "name" : "c",
+        "label" : "Comments",
+        "ui" : "comments-widget",
+		"required": { "expression": "true" },
+        "binding" : {
+          "comments" : "comments"
+        }
+      }
+      ]
+    } ],
+    "commands" : [ {
+      "name" : "Complete",
+      "label" : "Complete",
+      "type" : "COMPLETE",
+      "primary" : true
+    }, {
+      "name" : "Save",
+      "label" : "Save",
+      "type" : "SAVE",
+      "primary" : false
+    } ],
+    "configurations" : [ {
+      "condition" : { "expression": "true" },
+      "potentialOwner" : {
+        "name" : "role1"
+      },
+      "businessAdministrator" : {
+        "name" : "role1Admin"
+      }
+    } ]
+  } ],
+  "description" : {"expression" : "\"Comments example \" + _instance.instanceId"},
+  "obsolete" : false,
+  "defaultAttributes" : { },
+  "notifications": [
+  ]
+}

@@ -167,7 +167,7 @@
       "businessAdministrator" : {
         "name" : "role1Admin"
       },
-      "initiator": {
+      "autoClaim": {
       	"type":"PROCESS_INITIATOR"
       }
     } ]
