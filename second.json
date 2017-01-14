@@ -27,6 +27,7 @@
     "name" : "task1",
     "label" : "Definition",
     "edges": [{
+    	"name": "first",
     	"from" : {
 	      "type" : "START"
 	    },
@@ -36,6 +37,7 @@
 	      "type" : "SECTION"
 	    }
     }, {
+    	"name": "second",
     	"from" : {
 	      "type" : "SECTION",
 	      "name": "section1"
@@ -46,6 +48,7 @@
 	      "type" : "SECTION"
 	    }
     }, {
+    	"name": "third",
     	"from" : {
 	      "type" : "SECTION",
 	      "name": "section2"
@@ -182,6 +185,7 @@
       "primary" : true
     }],
     "edges": [{
+    	"name": "first",
     	"from" : {
 	      "type" : "START"
 	    },

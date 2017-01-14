@@ -1,6 +1,7 @@
 {
   "name" : "test",
   "label" : "Prvni krasny process s formem",
+  "documentation": "Tahle dokumentace neni uplne dlouha, ale chtelo to zkusit jak to funguje",
   "revision" : 23,
   "edges" : [ {
     "name" : "e1",
@@ -38,6 +39,7 @@
     "name" : "task1",
     "label" : "Definition",
     "edges": [{
+    	"name": "first",
     	"from" : {
 	      "type" : "START"
 	    },
@@ -47,6 +49,7 @@
 	      "type" : "SECTION"
 	    }
     }, {
+    	"name": "second",
     	"from" : {
 	      "type" : "START"
 	    },
