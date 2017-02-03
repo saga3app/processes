@@ -1,0 +1,242 @@
+{
+  "name" : "UBP",
+  "label" : "Univerzalni bankovni proces",
+  "documentation" : null,
+  "id" : "KB000000000120170202",
+  "revision" : 1,
+  "edges" : [ {
+    "name" : "FromStartToRequestDefinition",
+    "label" : null,
+    "documentation" : null,
+    "condition" : {
+      "expression" : "true"
+    },
+    "from" : {
+      "name" : null,
+      "label" : null,
+      "documentation" : null,
+      "type" : "START"
+    },
+    "to" : {
+      "name" : "requestDefinition",
+      "label" : null,
+      "documentation" : null,
+      "type" : "TASK"
+    }
+  } ],
+  "tasks" : [ {
+    "name" : "requestDefinition",
+    "label" : "Definice požadavku",
+    "documentation" : null,
+    "sections" : [
+      {
+        "name" : "searchClientProduct",
+        "label" : "Vyhledání klienta a produktu",
+        "documentation" : null,
+        "widgets" : [
+          {
+            "name" : "client",
+            "label" : "Klient",
+            "documentation" : null,
+            "visible" : {
+              "expression" : "true"
+            },
+            "required" : {
+              "expression" : "true"
+            },
+            "editable" : null,
+            "ui" : "person-widget",
+            "binding" : {
+              "client" : "client"
+            },
+            "properties" : { },
+            "width" : "50"
+          },
+          {
+            "name" : "product",
+            "label" : "Produkt",
+            "documentation" : null,
+            "visible" : {
+              "expression" : "true"
+            },
+            "required" : {
+              "expression" : "false"
+            },
+            "editable" : null,
+            "ui" : "product-widget",
+            "binding" : {
+              "client" : "client",
+              "product" : "product",
+              "account" : "account"
+            },
+            "properties" : { },
+            "width" : "50"
+          },
+          {
+            "name" : "doneSearchClientProduct",
+            "label" : "",
+            "documentation" : null,
+            "visible" : {
+              "expression" : "true"
+            },
+            "required" : {
+              "expression" : "false"
+            },
+            "editable" : null,
+            "ui" : "button-widget",
+            "binding" : {
+              "client" : "doneSearchClientProduct"
+            },
+            "properties" : {
+              "urlLabel": "Link",
+              "buttonLabel": "Pokračovat",
+              "closeSection": true
+            },
+            "width" : null
+          }
+        ]
+      },
+      {
+        "name" : "addDocuments",
+        "label" : "Vložte dokumenty od klienta",
+        "documentation" : null,
+        "widgets" : [
+          {
+            "name" : "documents",
+            "label" : "",
+            "documentation" : null,
+            "visible" : null,
+            "required" : {
+              "expression" : "false"
+            },
+            "editable" : null,
+            "ui" : "documentlist-widget",
+            "binding" : {
+              "documents" : "documents"
+            },
+            "properties" : { },
+            "width" : null
+          },
+          {
+            "name" : "doneAddDocuments",
+            "label" : "",
+            "documentation" : null,
+            "visible" : {
+              "expression" : "true"
+            },
+            "required" : {
+              "expression" : "false"
+            },
+            "editable" : null,
+            "ui" : "button-widget",
+            "binding" : {
+              "client" : "doneAddDocuments"
+            },
+            "properties" : {
+              "urlLabel": "Link",
+              "buttonLabel": "Pokračovat",
+              "closeSection": true
+            },
+            "width" : null
+          }
+        ]
+      }
+    ],
+    "commands" : [ {
+      "name" : "Done",
+      "label" : "Done",
+      "documentation" : null,
+      "type" : "DONE",
+      "primary" : true,
+      "editable" : null,
+      "data" : {
+        "newOwner" : null,
+        "suspendedUntil" : {
+          "expression" : "suspendedUntil"
+        }
+      }
+    },
+    {
+      "name" : "Save",
+      "label" : "Save",
+      "documentation" : null,
+      "type" : "SAVE",
+      "primary" : false,
+      "editable" : null,
+      "data" : null
+    } ],
+    "header" : {
+      "template" : "<h2>${client.firstName} ${client.surname}<h2>",
+      "watching" : [ "client.firstName", "client.surname" ]
+    },
+    "edges" : [ {
+      "name" : "FromStartToSearchClientProduct",
+      "label" : null,
+      "documentation" : null,
+      "condition" : {
+        "expression" : "true"
+      },
+      "from" : {
+        "name" : null,
+        "label" : null,
+        "documentation" : null,
+        "type" : "START"
+      },
+      "to" : {
+        "name" : "searchClientProduct",
+        "label" : null,
+        "documentation" : null,
+        "type" : "SECTION"
+      }
+    },
+    {
+      "name" : "FromSearchClientProductToAddDocuments",
+      "label" : null,
+      "documentation" : null,
+      "condition" : {
+        "expression" : "true"
+      },
+      "from" : {
+        "name" : "searchClientProduct",
+        "label" : null,
+        "documentation" : null,
+        "type" : "SECTION"
+      },
+      "to" : {
+        "name" : "addDocuments",
+        "label" : null,
+        "documentation" : null,
+        "type" : "SECTION"
+      }
+    } ],
+    "configurations" : [ {
+      "condition" : {
+        "expression" : "true"
+      },
+      "potentialOwner" : {
+        "name" : "role1"
+      },
+      "businessAdministrator" : {
+       "name" : "role1Admin"
+      },
+      "dueDate" : null,
+      "estimatedWork" : null,
+      "autoClaim" : null,
+      "excludedOwner" : null
+    } ],
+    "notifications" : [ ]
+    } ],
+  "overview" : null,
+  "estimatedCompletionDate" : null,
+  "description" : {
+    "expression" : "\"Univerzální bannkovní proces id: \" + _instance.instanceId"
+  },
+  "diagram" : null,
+  "notifications" : [ ],
+  "obsolete" : false,
+  "deployedAt" : 1485612033314,
+  "deployedBy" : {
+    "name" : "tomas.lahner@stratox.cz"
+  },
+  "defaultAttributes" : { }
+}
